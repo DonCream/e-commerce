@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import Link from 'next/link'
 
 import products from '../products.json'
 import { fromImageToUrl } from './api/url'
@@ -13,11 +14,15 @@ export default function Home() {
       </Head>
 			{products.map(product => (
        <div key={product.name} className="">
+       <Link href={`/products/${product.slug}`}>
+       <a>
         <div className="">
         <div className="flex flex-row w-40 h-40"><img src={fromImageToUrl(product.image)} alt="" /> </div>
 	      <div className=""> {product.name} {product.price}
         </div>
         </div>
+       </a>
+       </Link>
 			</div>
 			))}
     </div>
