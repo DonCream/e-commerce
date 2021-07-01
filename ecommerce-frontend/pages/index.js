@@ -18,7 +18,7 @@ export default function Home() {
        <a>
         <div className="">
         <div className="flex flex-row w-40 h-40"><img src={fromImageToUrl(product.image)} alt="" /> </div>
-	      <div className=""> {product.name} {product.price}
+	      <div className=""> {product.name} ${product.price}
         </div>
         </div>
        </a>
