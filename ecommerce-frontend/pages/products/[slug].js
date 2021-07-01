@@ -1,11 +1,8 @@
-import products from '../../products.json'
-import { fromImageToUrl } from '../api/url'
+import { API_URL, fromImageToUrl } from '../api/url'
 import Head from 'next/head'
 import { twoDecimals } from '../../utils/format'
 
-const product = products [0]
-
-const Product = () => {
+const Product = ({product}) => {
   return(
     <div>
       <Head>
@@ -23,6 +20,29 @@ const Product = () => {
       <p>{product.content}</p>
     </div>
   )
+}
+
+export async function getStaticProps({params: {slug}}) {
+  const product_res = await fetch(`${API_URL}/products/?slug=${slug}`)
+  const found = await product_res.json()
+
+  return {
+    props: {
+      product: found[0]
+    }
+  }
+}
+
+export async function getStaticPaths(){
+  const products_res = await fetch (`${API_URL}/products/`)
+  const products = await products_res.json()
+
+  return {
+    paths: products.map(product => ({
+      params: { slug: String(product.slug) }
+    })),
+    fallback: false
+  }
 }
 
 export default Product;
