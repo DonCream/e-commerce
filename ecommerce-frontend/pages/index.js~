@@ -4,6 +4,8 @@ import Link from 'next/link'
 
 import products from '../products.json'
 import { fromImageToUrl } from './api/url'
+import { twoDecimals } from '../utils/format'
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -18,7 +20,7 @@ export default function Home() {
        <a>
         <div className="">
         <div className="flex flex-row w-40 h-40"><img src={fromImageToUrl(product.image)} alt="" /> </div>
-	      <div className=""> {product.name} {product.price}
+	      <div className=""> {product.name} ${product.price}
         </div>
         </div>
        </a>
