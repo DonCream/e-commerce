@@ -32,14 +32,14 @@ export async function getStaticProps({params: {slug}}) {
     }
   }
 }
-
+//Retrieve all teh possible paths
 export async function getStaticPaths(){
   const products_res = await fetch (`${API_URL}/products/`)
   const products = await products_res.json()
-
+//Return them to NextJS context
   return {
     paths: products.map(product => ({
-      params: { slug: (product.slug) }
+      params: { slug: String(product.slug) }
     })),
     fallback: false
   }

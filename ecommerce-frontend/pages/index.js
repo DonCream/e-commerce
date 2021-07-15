@@ -29,11 +29,11 @@ export default function Home({products}) {
     </div>
   )
 }
-
+//Fetch the products as props
 export async function getStaticProps(){
   const product_res = await fetch(`${API_URL}/products/`)
   const products = await product_res.json()
-
+//Return the products as props
   return {
     props: {
       products
