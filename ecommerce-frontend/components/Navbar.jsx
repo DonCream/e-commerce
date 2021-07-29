@@ -23,10 +23,10 @@ export default function Navbar() {
                 E-Commerce Clothing
               </a>
             </Link>
-            <div className="">
+            <div className="text-white">
               {user ? (
               <Link href="/account">
-                {user.email}
+                <a>{user.email}</a>
               </Link>
               ):(
                 <Link href="/login">
