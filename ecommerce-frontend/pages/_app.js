@@ -3,13 +3,17 @@ import 'tailwindcss/tailwind.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
+import { AuthProvider } from '../context/AuthContext.jsx'
+
 function MyApp({ Component, pageProps }) {
   return(
-    <content>
-      <Navbar />
-      <Component {...pageProps} />
-      <Footer /> 
-    </content>
+    <AuthProvider>
+      <content>
+        <Navbar />
+        <Component {...pageProps} />
+        <Footer /> 
+      </content>
+    </AuthProvider>
   )
 }
 
