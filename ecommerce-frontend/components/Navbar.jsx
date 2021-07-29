@@ -2,9 +2,12 @@ import Link from 'next/link'
 import IndexDropdown from '../components/IndexDropdown'
 import { useState } from 'react'
 import { useRouter} from 'next/router'
+import { useContext } from 'react'
+import AuthContext from '../context/AuthContext'
 
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const { user } = useContext(AuthContext)
 
   return(
     <div>
@@ -20,6 +23,17 @@ export default function Navbar() {
                 E-Commerce Clothing
               </a>
             </Link>
+            <div className="">
+              {user ? (
+              <Link href="/account">
+                {user.email}
+              </Link>
+              ):(
+                <Link href="/login">
+                  <a>Log In</a>
+                </Link>
+              )}
+            </div>
             <button
               className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
               type="button"
