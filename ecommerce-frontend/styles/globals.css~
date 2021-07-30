@@ -14,15 +14,3 @@ a {
 * {
   box-sizing: border-box;
 }
-
-.auth {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-
-
-
-
-

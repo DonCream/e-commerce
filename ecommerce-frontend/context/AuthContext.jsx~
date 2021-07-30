@@ -31,5 +31,5 @@ export const AuthProvider = (props) => {
   )
 }
 
-export default function AuthContext()
+export default AuthContext
 
