@@ -12,7 +12,7 @@ export default function Navbar() {
   return(
     <div>
     
-       <nav className="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-black shadow">
+       <nav className="fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-black shadow">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <Link href="/">
@@ -23,7 +23,7 @@ export default function Navbar() {
                 E-Commerce Clothing
               </a>
             </Link>
-            <div className="text-white">
+            <div className="text-white auth">
               {user ? (
               <Link href="/account">
                 <a>{user.email}</a>
