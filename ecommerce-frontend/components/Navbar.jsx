@@ -102,7 +102,13 @@ export default function Navbar() {
                   className="bg-white text-black active:bg-blueGray-600 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
                   type="button"
                 >
-                  <i className="fas fa-arrow-alt-circle-down"></i> Download
+
+                  <a className="hover:text-blueGray-500i fas fa-arrow-alt-circle-down text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                  href="/account"
+                >
+                  <i className="text-blueGray-400 far fa-file-alt text-lg leading-lg mr-2" />{" "}
+                  Download
+                </a>
                 </button>
               </li>
             </ul>
